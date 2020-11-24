@@ -1,18 +1,7 @@
 # HanhchinhvnApi
 
-To start your Phoenix server:
+## Usage
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- https://hanhchinhvn.dew.vn/api/tinh_tp
+- https://hanhchinhvn.dew.vn/api/quan_huyen/79
+- https://hanhchinhvn.dew.vn/api/xa_phuong/775
