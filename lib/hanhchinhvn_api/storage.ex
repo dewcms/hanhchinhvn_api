@@ -8,19 +8,28 @@ defmodule HanhchinhvnApi.Storage do
       get!("https://raw.githubusercontent.com/joehua87/hanhchinhvn/master/dist/tinh_tp.json")
       |> Jason.decode!()
       |> Map.values()
+      |> Enum.sort_by(&Map.get(&1, "name_with_type"))
       |> Jason.encode!()
 
     quan_huyen =
       get!("https://raw.githubusercontent.com/joehua87/hanhchinhvn/master/dist/quan_huyen.json")
       |> Jason.decode!()
       |> Map.values()
-      |> Enum.group_by(& &1["parent_code"], &Jason.encode!/1)
+      |> Enum.group_by(& &1["parent_code"])
+      |> Enum.map(fn {key, data} ->
+        {key, data |> Enum.sort_by(&Map.get(&1, "name_with_type")) |> Jason.encode!()}
+      end)
+      |> Enum.into(%{})
 
     xa_phuong =
       get!("https://raw.githubusercontent.com/joehua87/hanhchinhvn/master/dist/xa_phuong.json")
       |> Jason.decode!()
       |> Map.values()
-      |> Enum.group_by(& &1["parent_code"], &Jason.encode!/1)
+      |> Enum.group_by(& &1["parent_code"])
+      |> Enum.map(fn {key, data} ->
+        {key, data |> Enum.sort_by(&Map.get(&1, "name_with_type")) |> Jason.encode!()}
+      end)
+      |> Enum.into(%{})
 
     {:ok,
      [
